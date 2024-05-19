@@ -1,0 +1,117 @@
+
+##Data Structure
+
+# Queue Implementation using Arrays
+
+# Define a class Queue:
+#     Initialize an array to store elements
+#     Initialize variables for front and rear pointers
+
+#     Define a method enqueue(element):
+#         Add the element to the rear of the array
+#         Increment the rear pointer
+
+#     Define a method dequeue():
+#         If the queue is empty (front > rear), return None
+#         Remove the element at the front of the array
+#         Increment the front pointer
+#         Return the dequeued element
+
+
+
+
+# Time Complexity Analysis:
+# - Enqueue Operation: O(1) (constant time complexity) as adding an element at the rear is efficient.
+# - Dequeue Operation: O(1) (constant time complexity) as retrieving and removing an element from the front is efficient.
+
+############################################################################
+
+# Max Priority Queue Implementation using Arrays
+
+# Define a class MaxPriorityQueue:
+#     Initialize an array to store elements with their priorities
+#     Initialize a variable for the size of the queue
+
+#     Define a method enqueue(element, priority):
+#         Add the element and its priority to the array
+#         Increment the size of the queue
+#         Call the heapifyUp method to maintain the max heap property
+
+#     Define a method dequeue():
+#         If the queue is empty, return None
+#         Remove and return the element with the highest priority (first element in the array)
+#         Decrement the size of the queue
+#         Call the heapifyDown method to maintain the max heap property
+
+#     Define a method heapifyUp(index):
+#         Get the parent index of the element at the given index
+#         If the parent exists and its priority is less than the current element's priority:
+#             Swap the current element with its parent
+#             Recursively call heapifyUp on the parent index
+
+#     Define a method heapifyDown(index):
+#         Get the indices of the left and right children of the element at the given index
+#         If the left child exists and has a higher priority than the current element:
+#             Swap the current element with the left child
+#             Recursively call heapifyDown on the left child index
+#         Otherwise, if the right child exists and has a higher priority than the current element:
+#             Swap the current element with the right child
+#             Recursively call heapifyDown on the right child index
+
+
+
+
+# Expected Time Complexity for Max Priority Queue:
+# - Enqueue Operation: O(n) in worst case (when the element needs to be placed at the front).
+# - Dequeue Operation: O(1) (constant time complexity) since the highest priority element is dequeued first.
+
+
+
+############################################################################
+############################################################################
+
+
+##Database
+
+# SELECT DISTINCT emp.Salary AS SecondHighestSalary
+# FROM Employee emp
+# WHERE emp.Salary < (SELECT MAX(emp.Salary) FROM Employee)
+# ORDER BY emp.Salary DESC
+# LIMIT 1 OFFSET 1;
+
+
+############################################################################
+############################################################################
+
+##Algorithm
+
+# Define a function findMiddle(head):
+#     Set slowPointer and fastPointer to the head of the list
+#     While fastPointer is not None and fastPointer.next is not None:
+#         Move slowPointer one step forward
+#         Move fastPointer two steps forward
+#     Return slowPointer
+
+# Define a function getSecondMiddle(head):
+#     If head is None:
+#         Return None
+#     Set slowPointer and fastPointer to the head of the list
+#     Set prevPointer to None
+#     While fastPointer is not None and fastPointer.next is not None:
+#         Move prevPointer to slowPointer
+#         Move slowPointer one step forward
+#         Move fastPointer two steps forward
+#     If slowPointer is not None and prevPointer is not None:
+#         Return slowPointer.next (which is the second middle node)
+#     Else:
+#         Return None
+
+
+
+# findMiddle function:
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+
+# getSecondMiddle function:
+# Time Complexity: O(n)
+# Space Complexity: O(1)
